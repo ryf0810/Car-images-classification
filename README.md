@@ -1,7 +1,5 @@
 # car-images-classification-project
 
-Please rename the archive folder after untar to data
-
 - Usage:
   after untar the data obtained online and rename to data, run create_label_file first, then run the model_parallel.py in terminal. You can adjust the batch size/learning rate/... to test
 
