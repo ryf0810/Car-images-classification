@@ -100,3 +100,36 @@ def train(model, train_loader, epochs, learning_rate, criterion):
     model.loss_history = loss_values
     model.accuracy_history = accuracy_values
     torch.save(model, './trained_model.pth')
+
+def eval(model, test_loader, epochs, criterion):
+    loss_values = []
+    accuracy_values = []
+
+    model.eval()
+
+    with torch.no_grad():
+        for epoch in range(epochs):
+            test_loss = 0.0
+            total_correct_labels = 0
+            for batch in tqdm(test_loader, total=len(test_loader)):
+                inputs, targets = batch
+
+                outputs = model(inputs)
+                _, predictions = torch.max(outputs, dim=1)
+                correct_labels = (predictions == targets).sum().item()
+                total_correct_labels += correct_labels
+
+                loss = criterion(outputs, targets)
+
+                test_loss += loss.item()
+
+            test_loss /= len(test_loader)
+            accuracy = total_correct_labels / len(test_loader.dataset) * 100
+        # add to list
+            loss_values.append(test_loss)
+            accuracy_values.append(accuracy)
+            print(f'Test Epoch: {epoch+1}    '
+                f'Test Accuracy: {total_correct_labels}/{len(test_loader.dataset)}({round(accuracy, 2)}%)    '
+                f'Test Loss: {round(test_loss, 3)}')
+    model.test_loss_history = loss_values
+    model.test_accuracy_history = accuracy_values
