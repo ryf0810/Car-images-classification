@@ -45,7 +45,7 @@ if __name__ == '__main__':
 
     eval(model=mycnn,
         test_loader=test_loader,
-        epochs=50,
+        epochs=epochs,
         criterion=criterion)
 
 
