@@ -1,7 +1,7 @@
 # car-images-classification-project
 
 - Usage:
-  after untar the data obtained online and rename to data, run create_label_file first, then run the model_parallel.py in terminal. You can adjust the batch size/learning rate/... to test
+  after untar the data obtained online and rename to 'data', run create_label_file first, then run the model_parallel.py in terminal. You can adjust the batch size/learning rate/... to test
 
 - data can be found here: https://www.kaggle.com/datasets/gogotchuri/myautogecardetails
   - suggest to only contain first 1000 to 2000 images folder and play around the adjustable parameters
