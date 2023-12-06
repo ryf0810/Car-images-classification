@@ -11,10 +11,9 @@
 - `model.py` 3 convolutional with max pooling layers followed by 2 fully connected layers, and train the model using cross entropy loss
 - `model_parallel.py` run the model on 4 CPUs
 
+- Test Accuracy Problem
+  - May due to imbalanced train-test-split, or try to use more imgaes
 
 # Network Structure
 -  All convolutional layers and 1st fully connected layers are followed by a relu activation function, no relu function after pooling layer
 <img width="991" alt="image" src="https://github.com/ryf0810/car-images-classification-project/assets/106381479/8cbbc174-32ae-4db7-b94c-5a7ee13bff60">
-
-# Test Accuracy Problem
-- May due to imbalanced train-test-split, or try to use more imgaes
