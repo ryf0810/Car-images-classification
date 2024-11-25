@@ -9,7 +9,7 @@
 - `create_label_file.py` will create a csv file for dataloader under ./data
 - `dataloader.py` will compile the images to `torch.utils.data.DataLoader` object
 - `model.py` 3 convolutional with max pooling layers followed by 2 fully connected layers, and train the model using cross entropy loss
-- `model_parallel.py` run the model on 4 CPUs
+- `model_parallel.py` (attempt to distribute model across GPU & CPU, not completed version)
 
 - Test Accuracy Problem
   - May due to imbalanced train-test-split, or try to use more imgaes
